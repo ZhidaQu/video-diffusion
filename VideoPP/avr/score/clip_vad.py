@@ -38,7 +38,15 @@ class CLIPVADScorer(VADScorer):
         imgs = [Image.fromarray(c) for c in crops]
         inp = self._proc(images=imgs, return_tensors="pt").to(self.device)
         with torch.no_grad():
-            f = self._model.get_image_features(**inp)
+            out = self._model.get_image_features(**inp)
+        if torch.is_tensor(out):
+            f = out
+        elif hasattr(out, "image_embeds"):
+            f = out.image_embeds
+        elif hasattr(out, "pooler_output"):
+            f = out.pooler_output
+        else:
+            f = out[0]
         return f / f.norm(dim=-1, keepdim=True)
 
     def score_map(self, frames: np.ndarray) -> np.ndarray:
