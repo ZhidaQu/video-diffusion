@@ -1,0 +1,17 @@
+# Core — the default pipeline and metrics all need these
+numpy>=1.24
+opencv-python>=4.7
+imageio>=2.30
+imageio-ffmpeg>=0.4
+pyyaml>=6.0
+scipy>=1.10
+matplotlib>=3.6          # case-study figures (scripts/case_*.py)
+torch>=2.0
+torchvision>=0.15
+lpips>=0.1.4             # LPIPS / tLP
+transformers>=4.44       # clip_vad scorer (always on) + grounded_sam / SAM2
+diffusers>=0.27          # hf_diffusion / bg_diffusion inpainters
+
+# Optional add-ons for the real open-vocab detector
+# groundingdino-py
+# segment-anything          # or SAM2

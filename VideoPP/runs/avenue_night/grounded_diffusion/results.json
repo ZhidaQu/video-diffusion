@@ -1,0 +1,60 @@
+{
+  "run_id": "avenue_night_grounded_diffusion",
+  "config": "grounded_diffusion",
+  "n_clips": 60,
+  "components": {
+    "detector": {
+      "name": "grounded_sam",
+      "box_threshold": 0.25,
+      "text_threshold": 0.2,
+      "dilate": 5
+    },
+    "inpainter": {
+      "name": "hf_diffusion",
+      "steps": 25,
+      "work_size": 512
+    },
+    "scorer": {
+      "name": "clip_vad"
+    }
+  },
+  "aggregate": {
+    "psnr": 28.971692844016683,
+    "ssim": 0.9716250409682592,
+    "lpips": 0.047989419133712845,
+    "tlp": 0.03618394457735121,
+    "warp_error": 1.957371433575948,
+    "residual_drop": -1.488305005902457,
+    "mask_iou": 0.09735011258713924,
+    "fvd": 44.98232905130071
+  },
+  "per_anomaly_type": {
+    "static_object": {
+      "psnr": 28.726536416792204,
+      "ssim": 0.9704797146841884,
+      "lpips": 0.05538519946858287,
+      "tlp": 0.03299183226190507,
+      "warp_error": 1.844580090045929,
+      "residual_drop": -4.645537422499922,
+      "mask_iou": 0.12816832779922568
+    },
+    "moving_object": {
+      "psnr": 29.031088852667143,
+      "ssim": 0.9729398230090738,
+      "lpips": 0.04687620010226965,
+      "tlp": 0.04014141717925668,
+      "warp_error": 1.9943053483963014,
+      "residual_drop": 0.44057887137280416,
+      "mask_iou": 0.08059440071073212
+    },
+    "local_appearance": {
+      "psnr": 29.157453262590696,
+      "ssim": 0.9714555852115154,
+      "lpips": 0.04170685783028603,
+      "tlp": 0.03541858429089188,
+      "warp_error": 2.033228862285614,
+      "residual_drop": -0.259956466580254,
+      "mask_iou": 0.08328760925145991
+    }
+  }
+}

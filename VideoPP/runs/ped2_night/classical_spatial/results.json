@@ -1,0 +1,55 @@
+{
+  "run_id": "ped2_night_classical_spatial",
+  "config": "classical_spatial",
+  "n_clips": 60,
+  "components": {
+    "detector": {
+      "name": "gt_mask"
+    },
+    "inpainter": {
+      "name": "spatial_cv2"
+    },
+    "scorer": {
+      "name": "clip_vad"
+    }
+  },
+  "aggregate": {
+    "psnr": 48.835288857327264,
+    "ssim": 0.9978374912713964,
+    "lpips": 0.004247808242992809,
+    "tlp": 0.018841315542037287,
+    "warp_error": 0.9751300225655238,
+    "residual_drop": -0.14123554542017086,
+    "mask_iou": 0.8160840178256259,
+    "fvd": 2.7765024195794092
+  },
+  "per_anomaly_type": {
+    "static_object": {
+      "psnr": 51.97161704429321,
+      "ssim": 0.9982405751943588,
+      "lpips": 0.0035684141679666937,
+      "tlp": 0.017780190473422407,
+      "warp_error": 0.9504331082105637,
+      "residual_drop": -1.3249564868177555,
+      "mask_iou": 0.8093982531568436
+    },
+    "moving_object": {
+      "psnr": 46.44672921986215,
+      "ssim": 0.9980255441740156,
+      "lpips": 0.003286878316430375,
+      "tlp": 0.02151060155592859,
+      "warp_error": 1.0421782284975052,
+      "residual_drop": 0.5048103837859196,
+      "mask_iou": 0.7846201454432927
+    },
+    "local_appearance": {
+      "psnr": 48.087520307826466,
+      "ssim": 0.9972463544458151,
+      "lpips": 0.005888132244581357,
+      "tlp": 0.01723315459676087,
+      "warp_error": 0.9327787309885025,
+      "residual_drop": 0.39643946677132347,
+      "mask_iou": 0.8542336548767416
+    }
+  }
+}

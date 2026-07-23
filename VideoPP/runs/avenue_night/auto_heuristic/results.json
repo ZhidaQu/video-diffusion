@@ -1,0 +1,55 @@
+{
+  "run_id": "avenue_night_auto_heuristic",
+  "config": "auto_heuristic",
+  "n_clips": 60,
+  "components": {
+    "detector": {
+      "name": "heuristic_bgsub"
+    },
+    "inpainter": {
+      "name": "flow_fill"
+    },
+    "scorer": {
+      "name": "clip_vad"
+    }
+  },
+  "aggregate": {
+    "psnr": 32.1898120828304,
+    "ssim": 0.9855047375584642,
+    "lpips": 0.031066266109701247,
+    "tlp": 0.01106245827395469,
+    "warp_error": 1.050784916182359,
+    "residual_drop": 0.17464670281978906,
+    "mask_iou": 0.17658376870178796,
+    "fvd": 23.09992619819706
+  },
+  "per_anomaly_type": {
+    "static_object": {
+      "psnr": 28.239600920461942,
+      "ssim": 0.9822126474231482,
+      "lpips": 0.056822290644049644,
+      "tlp": 0.0075993725098669525,
+      "warp_error": 0.914209209382534,
+      "residual_drop": 0.1078661786421363,
+      "mask_iou": 0.0002927448158688475
+    },
+    "moving_object": {
+      "psnr": 36.52339095749788,
+      "ssim": 0.9902669189497828,
+      "lpips": 0.010387378663290292,
+      "tlp": 0.010590549395419657,
+      "warp_error": 1.0414952397346497,
+      "residual_drop": 0.6389828103915047,
+      "mask_iou": 0.370197030005888
+    },
+    "local_appearance": {
+      "psnr": 31.80644437053137,
+      "ssim": 0.9840346463024616,
+      "lpips": 0.025989129021763802,
+      "tlp": 0.014997452916577458,
+      "warp_error": 1.1966502994298935,
+      "residual_drop": -0.22290888057427397,
+      "mask_iou": 0.15926153128360712
+    }
+  }
+}
